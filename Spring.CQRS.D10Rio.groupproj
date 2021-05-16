@@ -2,6 +2,14 @@
     <PropertyGroup>
         <ProjectGuid>{B56E9ABB-2D4D-442E-863F-52FD49F4E309}</ProjectGuid>
     </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="packages\Spring.CQRS.D10Rio.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="examples\Spring.CQRS.Example.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
         <Borland.ProjectType/>
@@ -9,14 +17,32 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
+    <Target Name="Spring_CQRS_D10Rio">
+        <MSBuild Projects="packages\Spring.CQRS.D10Rio.dproj"/>
+    </Target>
+    <Target Name="Spring_CQRS_D10Rio:Clean">
+        <MSBuild Projects="packages\Spring.CQRS.D10Rio.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Spring_CQRS_D10Rio:Make">
+        <MSBuild Projects="packages\Spring.CQRS.D10Rio.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Spring_CQRS_Example">
+        <MSBuild Projects="examples\Spring.CQRS.Example.dproj"/>
+    </Target>
+    <Target Name="Spring_CQRS_Example:Clean">
+        <MSBuild Projects="examples\Spring.CQRS.Example.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Spring_CQRS_Example:Make">
+        <MSBuild Projects="examples\Spring.CQRS.Example.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget/>
+        <CallTarget Targets="Spring_CQRS_D10Rio;Spring_CQRS_Example"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget/>
+        <CallTarget Targets="Spring_CQRS_D10Rio:Clean;Spring_CQRS_Example:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget/>
+        <CallTarget Targets="Spring_CQRS_D10Rio:Make;Spring_CQRS_Example:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

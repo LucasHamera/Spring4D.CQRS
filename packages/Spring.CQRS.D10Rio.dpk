@@ -36,6 +36,9 @@ contains
   Spring.CQRS.CommandHandler in '..\src\Command\Spring.CQRS.CommandHandler.pas',
   Spring.CQRS.Query in '..\src\Query\Spring.CQRS.Query.pas',
   Spring.CQRS.QueryHandler in '..\src\Query\Spring.CQRS.QueryHandler.pas',
-  Spring.CQRS.QueryDispatcher in '..\src\Query\Spring.CQRS.QueryDispatcher.pas';
+  Spring.CQRS.QueryDispatcher in '..\src\Query\Spring.CQRS.QueryDispatcher.pas',
+  Spring.CQRS.CommandRegistration in '..\src\Command\Spring.CQRS.CommandRegistration.pas',
+  Spring.CQRS.QueryRegistration in '..\src\Query\Spring.CQRS.QueryRegistration.pas',
+  Spring.CQRS.Registration in '..\src\Spring.CQRS.Registration.pas';
 
 end.
